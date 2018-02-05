@@ -14,6 +14,7 @@ Where is the podcast industry's version of [Spotify's Discover Weekly](https://g
 
 **Tentative and incomplete**
 
-- Apollo
 - React
+- Apollo
 - GraphQL
+- TravisCI
