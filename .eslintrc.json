@@ -1,5 +1,13 @@
 {
-  "root": true,
   "parser": "babel-eslint",
-  "extends": "airbnb-base"
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "arrow-parens": [1, "as-needed"],
+    "function-paren-newline": ["error", "multiline"]
+  }
 }
