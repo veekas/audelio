@@ -1,4 +1,8 @@
+before_script:
+  – npm update -g npm
+  - npm i react-scripts
 dist: trusty
+sudo: false
 language: node_js
 node_js:
   - "node"
