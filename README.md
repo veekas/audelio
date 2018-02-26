@@ -1,4 +1,5 @@
 # Audelio
+[![Build Status](https://travis-ci.com/veekas/audelio.svg?token=qnieVSb48paYrc16EzxC&branch=master)](https://travis-ci.com/veekas/audelio)
 
 ## Why Make Another Podcast App
 
