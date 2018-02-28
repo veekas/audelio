@@ -1,5 +1,4 @@
-# Audelio
-[![Build Status](https://travis-ci.com/veekas/audelio.svg?token=qnieVSb48paYrc16EzxC&branch=master)](https://travis-ci.com/veekas/audelio)
+# Audelio [![Build Status](https://travis-ci.com/veekas/audelio.svg?token=qnieVSb48paYrc16EzxC&branch=master)](https://travis-ci.com/veekas/audelio) [![codecov](https://codecov.io/gh/veekas/audelio/branch/master/graph/badge.svg?token=kqxI4PS58L)](https://codecov.io/gh/veekas/audelio)
 
 ## Why Make Another Podcast App
 
@@ -15,7 +14,9 @@ Where is the podcast industry's version of [Spotify's Discover Weekly](https://g
 
 **Tentative and incomplete**
 
+- Create React App
 - React
 - Apollo
 - GraphQL
 - TravisCI
+- Codecov
