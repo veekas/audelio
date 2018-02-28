@@ -1,4 +1,4 @@
-# Audelio [![Build Status](https://travis-ci.com/veekas/audelio.svg?token=qnieVSb48paYrc16EzxC&branch=master)](https://travis-ci.com/veekas/audelio) [![codecov](https://codecov.io/gh/veekas/audelio/branch/master/graph/badge.svg?token=kqxI4PS58L)](https://codecov.io/gh/veekas/audelio)
+# Audelio [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.com/veekas/audelio.svg?token=qnieVSb48paYrc16EzxC&branch=master)](https://travis-ci.com/veekas/audelio) [![codecov](https://codecov.io/gh/veekas/audelio/branch/master/graph/badge.svg?token=kqxI4PS58L)](https://codecov.io/gh/veekas/audelio)
 
 ## Why Make Another Podcast App
 
