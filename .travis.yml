@@ -1,12 +1,11 @@
-dist: trusty
-sudo: enabled
 language: node_js
 node_js:
   - "node"
 install:
+  - yarn install -g codecov
   - yarn install
 cache:
   directories:
   - node_modules
-after_success:
-  - codecov --file coverage/lcov.info --disable search
+script:
+  - codecov
