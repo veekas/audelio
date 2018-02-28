@@ -38,7 +38,7 @@ jspm_packages/
 # misc
 /.sass-cache
 /connect.lock
-# /coverage
+/coverage
 /libpeerconnection.log
 testem.log
 /typings
@@ -68,7 +68,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-# coverage
+coverage
 
 # nyc test coverage
 .nyc_output
