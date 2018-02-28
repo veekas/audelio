@@ -8,3 +8,6 @@ cache:
   - node_modules
 script:
   - codecov
+after_script:
+  - yarn global add codecov
+  - codecov
