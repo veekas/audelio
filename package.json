@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "codecov": "^3.0.0",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
@@ -22,5 +23,10 @@
     "coverage": "yarn test --coverage",
     "report-coverage": "codecov -t 2d29f1a2-3a67-4d10-9acb-a0530d1ebf88",
     "validate-codecov-yml": "curl --data-binary @codecov.yml https://codecov.io/validate"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
