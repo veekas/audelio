@@ -1,2 +1,6 @@
 codecov:
   token: 2d29f1a2-3a67-4d10-9acb-a0530d1ebf88
+fixes:
+  - "before/::after/"  # move path   e.g., "before/path" => "after/path"
+  - "::after/"         # move root   e.g., "path/" => "after/path/"
+  - "before/::"        # reduce root e.g., "before/path/" => "path/"
