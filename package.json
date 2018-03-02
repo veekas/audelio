@@ -20,5 +20,9 @@
     "test": "codecov && react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "coverage": "react-scripts test --env=jsdom --coverage"
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true
   }
 }

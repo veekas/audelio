@@ -7,4 +7,5 @@ cache:
   directories:
   - node_modules
 script:
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
   - codecov
