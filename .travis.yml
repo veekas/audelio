@@ -11,4 +11,4 @@ cache:
 script:
   - codecov -t 2d29f1a2-3a67-4d10-9acb-a0530d1ebf88
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -e TRAVIS_NODE_VERSION
