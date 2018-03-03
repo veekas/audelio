@@ -2,6 +2,8 @@
 
 ## Commit Messages
 
+**NOTE:** It is easiest to have semantic commit messages if you commit using the `git cz` command
+
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special format that includes a **type**, a **scope** and a **subject**:
 
 ```
