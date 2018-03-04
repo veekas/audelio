@@ -1,7 +1,8 @@
 import React from 'react';
+
 import Header from './Header/Header';
 import './App.css';
-
+import './icons';
 
 function App() {
   return (
