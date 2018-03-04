@@ -2,7 +2,13 @@
   "name": "audelio",
   "version": "0.1.0",
   "description": "a better way to discover podcasts",
-  "keywords": ["podcast", "recommendation", "discovery", "player", "pwa"],
+  "keywords": [
+    "podcast",
+    "recommendation",
+    "discovery",
+    "player",
+    "pwa"
+  ],
   "bugs": "https://github.com/veekas/audelio/issues",
   "license": "GPL-3.0-only",
   "author": {
@@ -20,10 +26,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "coverage": "yarn test --coverage",
-    "report-coverage":
-      "yarn coverage && codecov -t 2d29f1a2-3a67-4d10-9acb-a0530d1ebf88",
-    "validate-codecov-yml":
-      "curl --data-binary @codecov.yml https://codecov.io/validate"
+    "report-coverage": "yarn coverage && codecov -t 2d29f1a2-3a67-4d10-9acb-a0530d1ebf88",
+    "validate-codecov-yml": "curl --data-binary @codecov.yml https://codecov.io/validate"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
@@ -31,6 +35,7 @@
     "@fortawesome/react-fontawesome": "^0.0.17",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-player": "^1.2.1",
     "react-scripts": "^1.1.1",
     "styled-components": "^3.1.6"
   },
