@@ -1,17 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Header from './Header/Header';
-import './App.css';
 import './icons';
+
+const AppContainer = styled.div`
+  text-align: center;
+`;
+
+const AppIntro = styled.p`
+  font-size: large;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <AppContainer>
       <Header />
-      <p className="App-intro">
+      <AppIntro>
         To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
-    </div>
+      </AppIntro>
+    </AppContainer>
   );
 }
 
