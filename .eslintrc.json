@@ -8,6 +8,7 @@
   },
   "rules": {
     "arrow-parens": [1, "as-needed"],
-    "function-paren-newline": ["error", "multiline"]
+    "function-paren-newline": ["error", "multiline"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   }
 }

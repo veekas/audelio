@@ -1,4 +1,16 @@
-* How to Contribute
+# How to Contribute
+
+## Mobile UI
+- Hit Targets should measure at least 44 points x 44 points so they can be accurately tapped with a finger
+- Use UI elements that are designed for touch gestures
+- Text should be at least 11 points
+
+## Linting
+
+Audelio uses [Airbnb style guide](https://github.com/airbnb/javascript) for ESLint with a few exceptions:
+  - Single arguments in arrow functions don't need parentheses (`"arrow-parens"`)
+  - Parentheses followed by a new line (`"function-paren-newline"`) only errors for single lines of code
+  - JSX files can end with .jsx or .js (`"react/jsx-filename-extension"`)
 
 ## Commit Messages
 
