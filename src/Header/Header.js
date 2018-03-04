@@ -5,9 +5,11 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import Logo from './Logo';
 
 const HeaderBar = styled.header`
-  background-color: teal;
+  background-color: white;
   padding: 0em 1em 1em;
-  color: white;
+  color: teal;
+  position: sticky;
+  top: 0px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
