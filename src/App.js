@@ -7,7 +7,7 @@ import './icons';
 
 const AppContainer = styled.div`
   text-align: center;
-  background-color: teal;
+  background-color: #85cfd8;
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const StyledLogo = styled.svg`
   height: 2.5em;
-  fill: teal;
+  fill: #85cfd8;
 `;
 
 export default function Logo() {

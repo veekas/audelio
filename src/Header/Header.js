@@ -7,7 +7,7 @@ import Logo from './Logo';
 const HeaderBar = styled.header`
   background-color: white;
   padding: 0em 1em 1em;
-  color: teal;
+  color: #85cfd8;
   position: sticky;
   top: 0px;
   display: flex;
