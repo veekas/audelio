@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
-import logo from '../audelio-logo-wh.svg';
+import Logo from './Logo';
 
 const HeaderBar = styled.header`
   background-color: teal;
@@ -12,10 +12,6 @@ const HeaderBar = styled.header`
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: flex-end;
-`;
-
-const Logo = styled.img`
-  height: 2.5em;
 `;
 
 // TODO: find better way to do FontAwesomeIcon styling
@@ -29,7 +25,7 @@ export default function Header() {
   return (
     <HeaderBar>
       <FontAwesomeIcon icon="search" fixedWidth style={styles.icon} />
-      <Logo src={logo} alt="logo" />
+      <Logo />
       <FontAwesomeIcon icon="user" fixedWidth style={styles.icon} />
     </HeaderBar>
   );
