@@ -21,7 +21,7 @@ const Logo = styled.img`
 // TODO: find better way to do FontAwesomeIcon styling
 const styles = {
   icon: {
-    'font-size': '1.56em',
+    fontSize: '1.56em',
   },
 };
 
