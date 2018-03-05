@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 // import PropTypes from 'prop-types';
@@ -30,17 +31,22 @@ export default function Controls(props) {
   return (
     <ControlsContainer>
       <FontAwesomeIcon icon="undo" fixedWidth />
-      {/* TODO: make play/pause icon variable based on player state */}
-      <FontAwesomeIcon icon="play" fixedWidth onClick={props.playPause} />
+      {
+      props.playing
+        ? <FontAwesomeIcon icon="pause" fixedWidth onClick={props.playPause} />
+        : <FontAwesomeIcon icon="play" fixedWidth onClick={props.playPause} />
+      }
       <FontAwesomeIcon icon="redo" fixedWidth />
     </ControlsContainer>
   );
 }
 
-// Controls.defaultProps = {
-//   playPause: false,
-// };
+Controls.defaultProps = {
+  playPause: false,
+  playing: false,
+};
 
-// Controls.propTypes = {
-//   playPause: PropTypes.func,
-// };
+Controls.propTypes = {
+  playPause: PropTypes.func,
+  playing: PropTypes.bool,
+};

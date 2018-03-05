@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import React, { Component } from 'react';
 import FilePlayer from 'react-player/lib/players/FilePlayer';
 import styled from 'styled-components';
@@ -23,9 +25,18 @@ export default class Player extends Component {
       loaded: 0,
       duration: 0,
       playbackRate: 1.0,
-      loop: false,
     };
+    this.load = this.load.bind(this);
     this.playPause = this.playPause.bind(this);
+  }
+
+  onDuration = duration => {
+    console.log('onDuration', duration);
+    this.setState({ duration });
+  }
+
+  playPause = () => {
+    this.setState({ playing: !this.state.playing });
   }
 
   load = url => {
@@ -36,27 +47,41 @@ export default class Player extends Component {
     });
   };
 
-  playPause = () => {
-    this.setState({ playing: !this.state.playing });
-    console.log(this.state.playing);
+  ref = player => {
+    this.player = player;
   }
 
-  // componentDidMount() {
-  //   this.playPause();
-  // }
-
   render() {
+    const {
+      url, playing, volume, muted, played, loaded, duration, playbackRate,
+    } = this.state;
     return (
       <PlayerContainer>
         <FilePlayer
-          url={this.state.url}
-          controls={this.state.controls}
-          // remove these after testing
-          playing
-          playbackRate="2.5"
-          volume="0.1"
+          ref={this.ref}
+          url={url}
+          playing={playing}
+          volume={volume}
+          muted={muted}
+          played={played}
+          loaded={loaded}
+          duration={duration}
+          playbackRate={playbackRate}
+          onReady={() => console.log('onReady')}
+          onStart={() => console.log('onStart')}
+          onPlay={this.onPlay}
+          onPause={this.onPause}
+          onBuffer={() => console.log('onBuffer')}
+          onSeek={e => console.log('onSeek', e)}
+          onEnded={this.onEnded}
+          onError={e => console.log('onError', e)}
+          onProgress={this.onProgress}
+          onDuration={this.onDuration}
         />
-        <PlayerLayout props={this.state} playPause={this.playPause} />
+        <PlayerLayout
+          playPause={this.playPause}
+          playing={this.state.playing}
+        />
       </PlayerContainer>
     );
   }
