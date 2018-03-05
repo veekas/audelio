@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import FilePlayer from 'react-player/lib/players/FilePlayer';
 
-import Layout from './Layout';
+import PlayerLayout from './PlayerLayout';
 
 const sampleMP3Url =
   'https://rss.art19.com/episodes/9bead20d-767f-48b3-aaab-a1b5a21cf8fd.mp3';
@@ -51,7 +51,7 @@ export default class Player extends Component {
           playbackRate="2.5"
           volume="0.1"
         />
-        <Layout props={this.state} playPause={this.playPause} />
+        <PlayerLayout props={this.state} playPause={this.playPause} />
       </div>
     );
   }
