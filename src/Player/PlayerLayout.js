@@ -89,33 +89,31 @@ const Seek = styled.div`
 
 export default function PlayerLayout(props) {
   return (
-    <div>
-      <Grid>
-        <EpTitle>
-          How technology brings out the worst in us, with Tristan Harris
-        </EpTitle>
+    <Grid>
+      <EpTitle>
+        How technology brings out the worst in us, with Tristan Harris
+      </EpTitle>
 
-        <ShowTitle>
-          The Ezra Klein Show
-        </ShowTitle>
+      <ShowTitle>
+        The Ezra Klein Show
+      </ShowTitle>
 
-        <Previous>
-          <FontAwesomeIcon icon="chevron-left" fixedWidth />
-        </Previous>
+      <Previous>
+        <FontAwesomeIcon icon="chevron-left" fixedWidth />
+      </Previous>
 
-        <Next>
-          <FontAwesomeIcon icon="chevron-right" fixedWidth />
-        </Next>
+      <Next>
+        <FontAwesomeIcon icon="chevron-right" fixedWidth />
+      </Next>
 
-        <CoverContainer>
-          <CoverImg src={sampleCover} />
-        </CoverContainer>
+      <CoverContainer>
+        <CoverImg src={sampleCover} />
+      </CoverContainer>
 
-        <Seek>This will be the seek bar</Seek>
+      <Seek>This will be the seek bar</Seek>
 
-        <Controls playPause={props.playPause} />
+      <Controls playPause={props.playPause} />
 
-      </Grid>
-    </div>
+    </Grid>
   );
 }
