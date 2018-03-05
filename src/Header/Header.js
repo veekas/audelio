@@ -6,10 +6,10 @@ import Logo from './Logo';
 
 const HeaderBar = styled.header`
   background-color: white;
-  padding: 0em 1em 1em;
+  padding: 0 1em 1em;
   color: #85cfd8;
   position: sticky;
-  top: 0px;
+  top: 0;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
