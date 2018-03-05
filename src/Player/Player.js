@@ -2,50 +2,63 @@ import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
+import Controls from '../Controls/Controls';
 import sampleCover from './sampleCover.jpg';
 
 const Grid = styled.div`
   flex-grow: 1;
   display: grid;
-
   grid-template-areas:
-    "0-0       epTitle    epTitle    epTitle    epTitle    0-5"
-    "1-0       showTitle  showTitle  showTitle  showTitle  1-5"
-    "previous  cover      cover      cover      cover      next"
-    "seek      seek       seek       seek       seek       seek"
-    "controls  controls   controls   controls   controls controls";
-
-  grid-gap: 10px;
+    "epTitle    epTitle    epTitle"
+    "showTitle  showTitle  showTitle"
+    "previous   cover      next"
+    "seek       seek       seek"
+    "controls   controls   controls";
+  grid-template-columns:
+    [col1-start] 1fr
+    [col2-start] 4fr
+    [col3-start] 1fr
+    [cols-end];
+  grid-template-rows:
+    [row1-start] 3fr
+    [row2-start] 2fr
+    [row3-start] 40vh
+    [row4-start] 5fr
+    [row5-start] 10vh
+    [rows-end];
+  justify-items: center;
+  width: 100%;
+  height: 100%;
 `;
 
 const EpTitle = styled.div`
   grid-area: epTitle;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #fff;
-  font-size: 1em;
+  font-size: 1.5em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  height: 10vh;
-  display: flex;
+  max-width: 90%;
+  align-self: end;
 `;
 
 const ShowTitle = styled.div`
   grid-area: showTitle;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #fff;
   font-size: 1em;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  height: 5vh;
+  max-width: 90%;
 `;
 
 const Previous = styled.div`
   grid-area: previous;
-  color: #FFF;
+  color: #fff;
   font-size: 3em;
   align-self: center;
 `;
@@ -57,43 +70,22 @@ const Next = styled.div`
   align-self: center;
 `;
 
-const Cover = styled.div`
+const CoverContainer = styled.div`
   grid-area: cover;
-  background-image: url(${sampleCover});
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 40vh;
   margin: 0;
   padding: 0;
+`;
+
+const CoverImg = styled.img`
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 const Seek = styled.div`
   grid-area: seek;
   color: #fff;
+  align-self: end;
 `;
-
-const Controls = styled.div`
-  grid-area: controls;
-  position: fixed;
-  padding: 1em 0;
-  bottom: 0px;
-  height: 5vh;
-  width: 100vw;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: #85cfd8;
-  font-size: 1.56em;
-`;
-
-// TODO: find better way to do FontAwesomeIcon styling
-// const styles = {
-//   title: {
-//     'align-self': 'flex-end',
-//   },
-// };
 
 export default function Player() {
   return (
@@ -114,18 +106,13 @@ export default function Player() {
         <FontAwesomeIcon icon="chevron-right" fixedWidth />
       </Next>
 
-      <Cover />
+      <CoverContainer>
+        <CoverImg src={sampleCover} />
+      </CoverContainer>
 
       <Seek>This will be the seek bar</Seek>
 
-      <Controls>
-        <FontAwesomeIcon icon="undo" fixedWidth />
-
-        {/* TODO: make play/pause icon variable based on player state */}
-        <FontAwesomeIcon icon="play" fixedWidth />
-
-        <FontAwesomeIcon icon="redo" fixedWidth />
-      </Controls>
+      <Controls />
 
     </Grid>
   );
