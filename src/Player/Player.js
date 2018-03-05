@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import FilePlayer from 'react-player/lib/players/FilePlayer';
+import styled from 'styled-components';
 
 import PlayerLayout from './PlayerLayout';
 
 const sampleMP3Url =
   'https://rss.art19.com/episodes/9bead20d-767f-48b3-aaab-a1b5a21cf8fd.mp3';
+
+const PlayerContainer = styled.div`
+  flex: 1;
+`;
 
 export default class Player extends Component {
   constructor() {
@@ -42,7 +47,7 @@ export default class Player extends Component {
 
   render() {
     return (
-      <div>
+      <PlayerContainer>
         <FilePlayer
           url={this.state.url}
           controls={this.state.controls}
@@ -52,7 +57,7 @@ export default class Player extends Component {
           volume="0.1"
         />
         <PlayerLayout props={this.state} playPause={this.playPause} />
-      </div>
+      </PlayerContainer>
     );
   }
 }
