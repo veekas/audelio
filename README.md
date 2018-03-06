@@ -22,6 +22,8 @@ Where is the podcast industry's version of [Spotify's Discover Weekly](https://g
   - React Player
 - Apollo
 - GraphQL
-- TravisCI
-- Codecov
-
+- testing
+  - Jest
+  - Enzyme
+  - Codecov
+  - TravisCI
