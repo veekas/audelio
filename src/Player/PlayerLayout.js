@@ -116,6 +116,7 @@ export default function PlayerLayout(props) {
       <Controls
         playPause={props.playPause}
         playing={props.playing}
+        skipOrRewind={props.skipOrRewind}
       />
 
     </Grid>
@@ -125,9 +126,11 @@ export default function PlayerLayout(props) {
 PlayerLayout.defaultProps = {
   playPause: false,
   playing: false,
+  skipOrRewind: null,
 };
 
 PlayerLayout.propTypes = {
   playPause: PropTypes.func,
   playing: PropTypes.bool,
+  skipOrRewind: PropTypes.func,
 };

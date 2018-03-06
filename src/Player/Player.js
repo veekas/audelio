@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import React, { Component } from 'react';
-import FilePlayer from 'react-player/lib/players/FilePlayer';
+import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 
 import PlayerLayout from './PlayerLayout';
@@ -29,6 +29,7 @@ export default class Player extends Component {
     this.onDuration = this.onDuration.bind(this);
     this.playPause = this.playPause.bind(this);
     this.load = this.load.bind(this);
+    this.skipOrRewind = this.skipOrRewind.bind(this);
     this.ref = this.ref.bind(this);
   }
 
@@ -53,13 +54,35 @@ export default class Player extends Component {
     this.player = player;
   }
 
+  skipOrRewind = (seconds, rewind) => {
+    const currentTime = this.player.getCurrentTime();
+    let nextTime = null;
+    if (rewind === true) {
+      if (currentTime - seconds > 0) {
+        nextTime = currentTime - seconds;
+      } else if (rewind) {
+        nextTime = 0;
+      }
+    }
+    if (rewind === false) {
+      if (nextTime < this.state.duration) {
+        nextTime = currentTime + seconds;
+      } else {
+        nextTime = this.state.duration;
+      }
+    }
+    this.player.seekTo(nextTime);
+  }
+
   render() {
     const {
       url, playing, volume, muted, played, loaded, duration, playbackRate,
     } = this.state;
     return (
       <PlayerContainer>
-        <FilePlayer
+        <ReactPlayer
+          width="0"
+          height="0"
           ref={this.ref}
           url={url}
           playing={playing}
@@ -83,6 +106,7 @@ export default class Player extends Component {
         <PlayerLayout
           playPause={this.playPause}
           playing={this.state.playing}
+          skipOrRewind={this.skipOrRewind}
         />
       </PlayerContainer>
     );

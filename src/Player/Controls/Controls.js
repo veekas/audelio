@@ -30,23 +30,38 @@ const ControlsContainer = styled.div`
 export default function Controls(props) {
   return (
     <ControlsContainer>
-      <FontAwesomeIcon icon="undo" fixedWidth />
+
+      <FontAwesomeIcon
+        icon="undo"
+        fixedWidth
+        onClick={() => props.skipOrRewind(15, true)}
+      />
+
       {
       props.playing
         ? <FontAwesomeIcon icon="pause" fixedWidth onClick={props.playPause} />
         : <FontAwesomeIcon icon="play" fixedWidth onClick={props.playPause} />
       }
-      <FontAwesomeIcon icon="redo" fixedWidth />
+
+      <FontAwesomeIcon
+        icon="redo"
+        fixedWidth
+        onClick={() => props.skipOrRewind(15, false)}
+      />
+
     </ControlsContainer>
   );
 }
 
+// TODO: how does defaultProps work for functions?
 Controls.defaultProps = {
-  playPause: false,
+  playPause: null,
   playing: false,
+  skipOrRewind: null,
 };
 
 Controls.propTypes = {
   playPause: PropTypes.func,
   playing: PropTypes.bool,
+  skipOrRewind: PropTypes.func,
 };
