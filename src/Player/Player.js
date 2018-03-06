@@ -5,19 +5,19 @@ import FilePlayer from 'react-player/lib/players/FilePlayer';
 import styled from 'styled-components';
 
 import PlayerLayout from './PlayerLayout';
-
-const sampleMP3Url =
-  'https://rss.art19.com/episodes/9bead20d-767f-48b3-aaab-a1b5a21cf8fd.mp3';
+import { mp3Urls, getEpisodeUrl } from './sample-data';
 
 const PlayerContainer = styled.div`
   flex: 1;
 `;
 
+const firstUrl = getEpisodeUrl(mp3Urls);
+
 export default class Player extends Component {
   constructor() {
     super();
     this.state = {
-      url: sampleMP3Url,
+      url: firstUrl,
       playing: false,
       volume: 0.8,
       muted: false,
@@ -26,8 +26,10 @@ export default class Player extends Component {
       duration: 0,
       playbackRate: 1.0,
     };
-    this.load = this.load.bind(this);
+    this.onDuration = this.onDuration.bind(this);
     this.playPause = this.playPause.bind(this);
+    this.load = this.load.bind(this);
+    this.ref = this.ref.bind(this);
   }
 
   onDuration = duration => {
