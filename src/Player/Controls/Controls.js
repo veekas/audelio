@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import PlayPause from './PlayPause';
 // import PropTypes from 'prop-types';
 
 const ControlsContainer = styled.div`
@@ -37,11 +38,7 @@ export default function Controls(props) {
         onClick={() => props.skipOrRewind(15, true)}
       />
 
-      {
-      props.playing
-        ? <FontAwesomeIcon icon="pause" fixedWidth onClick={props.playPause} />
-        : <FontAwesomeIcon icon="play" fixedWidth onClick={props.playPause} />
-      }
+      <PlayPause playing={props.playing} playPause={props.playPause} />
 
       <FontAwesomeIcon
         icon="redo"
