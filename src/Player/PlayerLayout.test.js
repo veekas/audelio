@@ -9,3 +9,9 @@ it('renders without crashing', () => {
   ReactDOM.render(<PlayerLayout />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+/*
+  it('should mount in a full DOM', () => {
+    expect(mount(<Player />).find('.player-controls').length).toBe(1);
+  });
+*/
