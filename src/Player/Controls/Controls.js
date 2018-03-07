@@ -1,9 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import PlayPause from './PlayPause';
-// import PropTypes from 'prop-types';
 
 const ControlsContainer = styled.div`
   grid-area: controls;
@@ -49,16 +47,3 @@ export default function Controls(props) {
     </ControlsContainer>
   );
 }
-
-// TODO: how does defaultProps work for functions?
-Controls.defaultProps = {
-  playPause: null,
-  playing: false,
-  skipOrRewind: null,
-};
-
-Controls.propTypes = {
-  playPause: PropTypes.func,
-  playing: PropTypes.bool,
-  skipOrRewind: PropTypes.func,
-};
