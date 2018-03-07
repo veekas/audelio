@@ -79,8 +79,9 @@ export default class Player extends Component {
       url, playing, volume, muted, played, loaded, duration, playbackRate,
     } = this.state;
     return (
-      <PlayerContainer>
+      <PlayerContainer className="player-container">
         <ReactPlayer
+          className="react-player"
           width="0"
           height="0"
           ref={this.ref}
@@ -104,6 +105,7 @@ export default class Player extends Component {
           onDuration={this.onDuration}
         />
         <PlayerLayout
+          className="player-layout"
           playPause={this.playPause}
           playing={this.state.playing}
           skipOrRewind={this.skipOrRewind}
