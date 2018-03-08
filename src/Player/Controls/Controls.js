@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-// import PropTypes from 'prop-types';
+import PlayPause from './PlayPause';
 
 const ControlsContainer = styled.div`
   grid-area: controls;
@@ -29,18 +29,21 @@ const ControlsContainer = styled.div`
 export default function Controls(props) {
   return (
     <ControlsContainer>
-      <FontAwesomeIcon icon="undo" fixedWidth />
-      {/* TODO: make play/pause icon variable based on player state */}
-      <FontAwesomeIcon icon="play" fixedWidth onClick={props.playPause} />
-      <FontAwesomeIcon icon="redo" fixedWidth />
+
+      <FontAwesomeIcon
+        icon="undo"
+        fixedWidth
+        onClick={() => props.skipOrRewind(15, true)}
+      />
+
+      <PlayPause playing={props.playing} playPause={props.playPause} />
+
+      <FontAwesomeIcon
+        icon="redo"
+        fixedWidth
+        onClick={() => props.skipOrRewind(15, false)}
+      />
+
     </ControlsContainer>
   );
 }
-
-// Controls.defaultProps = {
-//   playPause: false,
-// };
-
-// Controls.propTypes = {
-//   playPause: PropTypes.func,
-// };

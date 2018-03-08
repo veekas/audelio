@@ -1,5 +1,6 @@
 /* eslint no-console: 0 */
 /* eslint no-param-reassign: 0 */
+/* eslint no-restricted-globals: 0 */
 
 // In production, we register a service worker to serve assets from local cache.
 
@@ -100,6 +101,37 @@ export default function register() {
         registerValidSW(swUrl);
       }
     });
+
+    // self.addEventListener('push', () => {
+    //   console.log('Received a push message', event);
+    //   const title = 'Yay a message.';
+    //   const body = 'We have received a push message.';
+    //   const icon = '/images/icons/icon-128x128.png';
+    //   const tag = 'simple-push-example-tag';
+    //   event.waitUntil(window.registration.showNotification(title, { body, icon, tag }));
+    // });
+
+    // self.addEventListener('notificationclick', function (event) {
+    //   console.log('On notification click: ', event.notification.tag);
+    //   // Android doesn’t close the notification when you click on it
+    //   // See: http://crbug.com/463146
+    //   event.notification.close();
+
+    //   // This looks to see if the current is already open and
+    //   // focuses if it is
+    //   event.waitUntil(clients.matchAll({
+    //     type: 'window'
+    //   }).then(function (clientList) {
+    //     for (var i = 0; i < clientList.length; i++) {
+    //       var client = clientList[i];
+    //       if (client.url === '/' && 'focus' in client) {
+    //         return client.focus();
+    //       }
+    //     }
+    //     if (clients.openWindow) {
+    //       return clients.openWindow('/');
+    //     }
+    //   }));
   }
 }
 

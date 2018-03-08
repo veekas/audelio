@@ -112,7 +112,12 @@ export default function PlayerLayout(props) {
 
       <Seek>This will be the seek bar</Seek>
 
-      <Controls playPause={props.playPause} />
+      <Controls
+        className="player-controls"
+        playPause={props.playPause}
+        playing={props.playing}
+        skipOrRewind={props.skipOrRewind}
+      />
 
     </Grid>
   );
